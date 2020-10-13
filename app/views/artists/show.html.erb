@@ -1,0 +1,17 @@
+<h1>The Music Studio</h1>
+<h2><%= @artist.name %> Profile</h2>
+<p>Title: <%= @artist.title %></p>
+<p>Age: <%= @artist.age %></p>
+<p><strong><u>Instruments Played:</u></strong></p>
+<ul>
+    <% @artist.instruments.each do |inst| %>
+    <li><%= link_to inst.name, instrument_path(inst) %></li>
+    <% end %>
+</ul>
+<p><strong><u><%= button_to "Register New Instrument Specialty", artist_path(@artist), params: {add_specialty: true}, method: :get %></u></strong></p>
+
+<% if @add_new_specialty%>
+    <%= render "add.specialty" %>
+<% end%>
+
+<%#data: { confirm: "Are you sure?" } %>

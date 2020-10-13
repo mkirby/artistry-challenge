@@ -1,0 +1,9 @@
+<h1>The Music Studio</h1>
+<h2>Artist Database</h2>
+
+<p><strong><u>Select an Artist:</u></strong></p>
+<ul>
+    <% @artists.each do |artist|%>
+    <li><%= link_to artist.name, artist_path(artist) %></li>
+    <% end %>
+</ul>

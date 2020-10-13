@@ -1,0 +1,9 @@
+<h1>The Music Studio</h1>
+<h2>Supported Instruments</h2>
+
+<p><strong><u>Select an Instrument:</u></strong></p>
+<ul>
+    <% @instruments.each do |instrument|%>
+    <li><%= link_to instrument.name, instrument_path(instrument) %> (<%= instrument.classification %>)</li>
+    <% end %>
+</ul>
